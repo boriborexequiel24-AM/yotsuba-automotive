@@ -3,81 +3,161 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Yotsuba Automotive | Reliable Automotive Service</title>
+  <title>Yotsuba Automotive | Trusted Auto Care</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
   <style>
+    :root {
+      --bg-dark: #0b0f14;
+      --bg-card: #141a22;
+      --primary: #4ade80; /* green */
+      --secondary: #38bdf8; /* blue */
+      --text-main: #e5e7eb;
+      --text-muted: #9ca3af;
+    }
+
+    * {
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background: #0f0f0f;
-      color: #f5f5f5;
-      line-height: 1.6;
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(180deg, #0b0f14, #020617);
+      color: var(--text-main);
+      line-height: 1.7;
     }
-    header {
-      background: #000;
-      padding: 40px 20px;
-      text-align: center;
-      border-bottom: 4px solid #ff8c1a;
+
+    /* ===== Animations ===== */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
     }
-    header h1 {
-      margin: 10px 0 5px;
-      font-size: 2.5rem;
-      color: #ff8c1a;
-    }
-    header p {
-      margin: 0;
-      font-size: 1.1rem;
-      color: #ddd;
-    }
+
     section {
-      padding: 60px 20px;
-      max-width: 1100px;
-      margin: auto;
+      animation: fadeUp 0.8s ease both;
     }
-    h2 {
-      color: #ff8c1a;
-      margin-bottom: 20px;
-    }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-    }
-    .card {
-      background: #1a1a1a;
-      padding: 20px;
-      border-radius: 8px;
-      border: 1px solid #2a2a2a;
-    }
-    .card strong {
-      color: #ffb366;
-    }
-    ul {
-      padding-left: 18px;
-    }
-    .pricing li {
-      margin-bottom: 8px;
-    }
-    .highlight {
-      background: #ff8c1a;
-      color: #000;
-      padding: 40px 20px;
+
+    /* ===== Header ===== */
+    header {
+      padding: 90px 20px 70px;
       text-align: center;
+      background: radial-gradient(circle at top, #052e1b, transparent 60%);
     }
-    footer {
-      background: #000;
-      text-align: center;
-      padding: 30px 20px;
-      font-size: 0.9rem;
-      color: #aaa;
+
+    header h1 {
+      font-size: clamp(2.2rem, 5vw, 3.2rem);
+      margin: 0;
+      color: var(--primary);
+      letter-spacing: 0.5px;
     }
+
+    header p {
+      margin-top: 14px;
+      max-width: 650px;
+      margin-left: auto;
+      margin-right: auto;
+      font-size: 1.1rem;
+      color: var(--text-muted);
+    }
+
     .badge {
       display: inline-block;
-      background: #ff8c1a;
-      color: #000;
-      padding: 4px 10px;
-      border-radius: 20px;
+      margin-bottom: 16px;
+      padding: 6px 14px;
+      border-radius: 999px;
+      background: rgba(74, 222, 128, 0.15);
+      color: var(--primary);
       font-size: 0.85rem;
+      font-weight: 600;
+    }
+
+    /* ===== Layout ===== */
+    section {
+      max-width: 1100px;
+      margin: auto;
+      padding: 80px 20px;
+    }
+
+    h2 {
+      font-size: 1.9rem;
+      margin-bottom: 30px;
+      color: var(--secondary);
+      text-align: center;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 24px;
+    }
+
+    .card {
+      background: linear-gradient(180deg, var(--bg-card), #0b1220);
+      padding: 28px;
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,0.05);
+      transition: transform 0.35s ease, box-shadow 0.35s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-6px) scale(1.01);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.45);
+    }
+
+    .card strong {
+      color: var(--primary);
+    }
+
+    ul {
+      padding-left: 18px;
+      margin: 0;
+    }
+
+    ul li {
       margin-bottom: 10px;
+      color: var(--text-muted);
+    }
+
+    /* ===== Highlight ===== */
+    .highlight {
+      background: linear-gradient(135deg, #064e3b, #022c22);
+      text-align: center;
+      padding: 90px 20px;
+      margin-top: 60px;
+    }
+
+    .highlight h2 {
+      color: #d1fae5;
+    }
+
+    .highlight p {
+      max-width: 650px;
+      margin: auto;
+      font-size: 1.05rem;
+      color: #ecfeff;
+    }
+
+    /* ===== Footer ===== */
+    footer {
+      background: #020617;
+      padding: 40px 20px;
+      text-align: center;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    /* ===== Mobile ===== */
+    @media (max-width: 600px) {
+      header {
+        padding: 70px 16px 50px;
+      }
+      section {
+        padding: 60px 16px;
+      }
     }
   </style>
 </head>
@@ -86,14 +166,14 @@
 <header>
   <div class="badge">Automotive Service & Repair</div>
   <h1>Yotsuba Automotive</h1>
-  <p>Reliable automotive service for maintenance, repair, and diagnostics</p>
+  <p>Professional, honest, and reliable automotive maintenance, repair, and diagnostics you can trust.</p>
 </header>
 
 <section>
   <h2>Business Hours</h2>
-  <div class="card">
-    <p><strong>Monday – Saturday:</strong> 8:00 AM – 8:00 PM</p>
-    <p><strong>Sunday:</strong> Closed</p>
+  <div class="grid">
+    <div class="card"><strong>Monday – Saturday</strong><br>8:00 AM – 8:00 PM</div>
+    <div class="card"><strong>Sunday</strong><br>Closed</div>
   </div>
 </section>
 
@@ -103,12 +183,12 @@
     <div class="card">Vehicle inspection & diagnostics</div>
     <div class="card">Preventive maintenance</div>
     <div class="card">Engine, brake, suspension & electrical repairs</div>
-    <div class="card">Oil change & general repairs</div>
+    <div class="card">Oil change & general servicing</div>
   </div>
 </section>
 
 <section>
-  <h2>Vehicle Types We Service</h2>
+  <h2>Vehicle Types</h2>
   <div class="grid">
     <div class="card">Cars</div>
     <div class="card">SUVs</div>
@@ -119,7 +199,7 @@
 
 <section>
   <h2>Pricing Examples</h2>
-  <div class="card pricing">
+  <div class="card">
     <ul>
       <li>Basic inspection – ₱500</li>
       <li>Computer diagnostics – ₱800</li>
@@ -138,48 +218,27 @@
     <div class="card"><strong>Basic – ₱2,500</strong><br>Oil change, fluids, tire pressure, brake check</div>
     <div class="card"><strong>Standard – ₱4,500</strong><br>Basic + battery, air filter & lights</div>
     <div class="card"><strong>Premium – ₱7,500</strong><br>Standard + engine diagnostics, brake pad & suspension</div>
-    <div class="card"><strong>Fleet</strong><br>Custom for 5+ vehicles, priority scheduling</div>
+    <div class="card"><strong>Fleet</strong><br>Custom plans for 5+ vehicles</div>
   </div>
 </section>
 
 <section>
-  <h2>Promotions & Discounts</h2>
-  <div class="card">
-    <ul>
-      <li>First-time customer – 10% off</li>
-      <li>Referral – ₱500 off for both customers</li>
-      <li>Package bundle – 5–10% off multiple vehicles</li>
-      <li>Seasonal promotions via social media or in-store</li>
-    </ul>
-  </div>
-</section>
-
-<section>
-  <h2>Appointments</h2>
-  <div class="card">
-    <p>Walk-ins are accepted.</p>
-    <p>Appointments are recommended for major repairs.</p>
-    <p>Same-day service depends on workload and parts availability.</p>
-  </div>
-</section>
-
-<section>
-  <h2>Frequently Asked Questions</h2>
+  <h2>Appointments & Policies</h2>
   <div class="grid">
-    <div class="card"><strong>Do I need an appointment?</strong><br>Walk-ins accepted; appointments recommended for major repairs.</div>
-    <div class="card"><strong>How long will service take?</strong><br>Minor services are same-day; major repairs may take longer.</div>
-    <div class="card"><strong>Can I get an estimate?</strong><br>Yes. Final pricing may change if extra issues are found.</div>
-    <div class="card"><strong>Do you service all brands?</strong><br>Most common brands supported, depending on parts & complexity.</div>
+    <div class="card">Walk-ins accepted. Appointments recommended for major repairs.</div>
+    <div class="card">Same-day service depends on workload and parts availability.</div>
+    <div class="card">Warranty depends on service and parts used.</div>
+    <div class="card">Payment required upon service completion.</div>
   </div>
 </section>
 
 <div class="highlight">
   <h2>Contact & Inquiries</h2>
-  <p>For service questions, scheduling, and pricing, contact us during business hours.</p>
+  <p>For service questions, estimates, and scheduling, contact Yotsuba Automotive during business hours.</p>
 </div>
 
 <footer>
-  <p>© 2026 Yotsuba Automotive. All rights reserved.</p>
+  © 2026 Yotsuba Automotive. All rights reserved.
 </footer>
 
 </body>
